@@ -118,15 +118,15 @@ function traversePath(dir, position, steps) {
   }
   else if(dir == west)
   {
-    if(includes(atoms, corners[0]) && includes(atoms, corners[3])){
+    if(includes(atoms, corners[0]) && includes(atoms, corners[2])){
       rayPoints.push([position[0], position[1], opposite(dir), east])
       traversePath(east, [position[0], position[1] + 1], steps + 1)}
     else if(includes(atoms, corners[0])){
       rayPoints.push([position[0], position[1], opposite(dir), south])
-      traversePath(south, [position[0], position[1] + 1], steps + 1)}
-    else if(includes(atoms, corners[3])){
+      traversePath(south, [position[0] - 1, position[1]], steps + 1)}
+    else if(includes(atoms, corners[2])){
       rayPoints.push([position[0], position[1], opposite(dir), north])
-      traversePath(north, [position[0], position[1] - 1], steps + 1)}
+      traversePath(north, [position[0] - 1, position[1]], steps + 1)}
     else {
       rayPoints.push([position[0], position[1], opposite(dir), west])
       traversePath(west, [position[0], position[1] - 1], steps + 1)}
