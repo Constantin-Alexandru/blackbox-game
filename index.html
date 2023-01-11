@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Box Game Visualiser</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="title">Black Box Game Visualiser</h1>
+
+  <div class="settings">
+    <div class="create-grid">
+      <label for="size" class="label">Grid size:</label>
+      <input type="number" name="size" id="size">
+      <button class="update">Create new Grid</button>
+      <button class="generate">Generate Paths</button>
+    </div>
+  </div>
+
+  <div class="grid-wrapper">
+    <div class="grid"></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
