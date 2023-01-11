@@ -71,6 +71,9 @@ function traversePath(dir, position, steps) {
     return;
   }
 
+  if(includes(atoms, position))
+    return;
+
   if(dir === north)
   {
     if(includes(atoms, corners[0]) && includes(atoms, corners[1])){
