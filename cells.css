@@ -1,0 +1,19 @@
+.correct {
+  color: green !important;
+}
+
+.incorrect {
+  color: red !important;
+}
+
+.missed {
+  color: yellow !important;
+}
+
+.absorbed {
+  color: red !important;
+}
+
+.reflected {
+  color: purple !important;
+}

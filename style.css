@@ -1,97 +1,141 @@
+:root {
+  --text: #eeeeee;
+  --background: #1c1c1c;
+  --primary: #8c1e1e;
+  --secondary: #971919;
+  --accent: #63c6c1;
 
-.title {
-  width: 100%;
-  text-align: center;
-  font-size: 2em;
+  --success: #00ff00;
+  --fail: #ff0000;
 }
 
-.settings {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+@import url("https://fonts.googleapis.com/css?family=Inter:700|Inter:400");
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.label {
-  font-size: 1.2em;
+body {
+  font-family: "Inter";
+  font-weight: 400;
+  background-color: var(--background);
+  color: var(--text);
 }
 
-#size {
-  width: 50px;
-  margin: 0 10px;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Inter";
+  font-weight: 700;
 }
 
-.row {
-  width: 100%;
-  display: flex;
+html {
+  font-size: 100%;
+} /* 16px */
+
+h1 {
+  font-size: 4.21rem; /* 67.36px */
 }
 
-.grid-wrapper {
-  margin-top: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
+h2 {
+  font-size: 3.158rem; /* 50.56px */
 }
 
-.cell {
-  min-width: 50px;
-  min-height: 50px;
-  
-  position: relative;
+h3 {
+  font-size: 2.369rem; /* 37.92px */
+}
+
+h4 {
+  font-size: 1.777rem; /* 28.48px */
+}
+
+h5 {
+  font-size: 1.333rem; /* 21.28px */
+}
+
+small {
+  font-size: 0.75rem; /* 12px */
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  padding-inline: 10px;
+  padding-block: 5px;
+  border-radius: 10px;
+  border: transparent;
+  background-color: var(--text);
+  color: var(--background);
+  transition: all 0.3s ease-in-out;
 
   cursor: pointer;
-}
 
-.ext {
-  background-color: red;
-  border: 1px solid black;
-}
+  &:hover {
+    background-color: var(--background);
+    color: var(--text);
+    border: 1px solid var(--text);
+  }
 
-.int {
-  background-color: black;
-  border: 1px solid red;
-}
+  &.primary {
+    &:not(.outline) {
+      background-color: var(--primary);
+      color: var(--text);
 
-.atom {
-  width: 100%;
-  height: 100%;
-  background-color: yellow;
-  border-radius: 50px;
-}
+      &:hover {
+        background-color: var(--background);
+        color: var(--primary);
+        border: 1px solid var(--primary);
+      }
+    }
 
-.ray-origin {
-  width: 100%;
-  height: 100%;
-  background-color: lightgreen;
-  border-radius: 50px;
-}
+    &.outline {
+      background-color: var(--background);
+      color: var(--primary);
+      border: 1px solid var(--primary);
 
-.north,
-.south,
-.west,
-.east {
-  background-color: yellow;
-  position: absolute;
+      &:hover {
+        background-color: var(--primary);
+        color: var(--text);
+      }
+    }
+  }
 }
+select {
+  padding-left: 10px;
+  padding-right: 40px;
+  padding-block: 5px;
 
-.north,
-.south {
-  width: 20px;
-  height: 25px;
-  margin-left: 15px;
-}
+  appearance: none;
+  background-color: var(--background);
+  color: var(--text);
+  border: 1px solid var(--text);
+  border-radius: 5px;
+  outline: none;
 
-.west,
-.east {
-  width: 25px;
-  height: 20px;
-  margin-top: 15px;
-}
+  z-index: 1;
 
-.south {
-  margin-top: 25px;
-}
+  cursor: pointer;
+  position: relative;
 
-.east {
-  margin-left: 25px;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23eeeeee%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 0.65rem auto;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    z-index: 200;
+  }
 }

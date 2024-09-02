@@ -1,0 +1,48 @@
+.title {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.grid {
+  margin-inline: auto;
+  border-collapse: collapse;
+  td {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+    font-size: 2.5em;
+    width: 50px;
+    height: 50px;
+    background-color: var(--text);
+    color: var(--accent);
+    border: 1px solid var(--background);
+    text-align: center;
+
+    cursor: pointer;
+
+    &.edge {
+      background-color: var(--accent);
+
+      color: var(--text);
+    }
+
+    &.corner {
+      background-color: transparent;
+      border: none;
+      cursor: default;
+    }
+  }
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 25px;
+}
+
+h4 {
+  text-align: center;
+  margin-bottom: 50px;
+}

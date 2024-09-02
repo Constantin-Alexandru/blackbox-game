@@ -1,29 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Black Box Game Visualiser</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlackBox Game</title>
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1 class="title">Black Box Game Visualiser</h1>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="body.css" />
+    <link rel="stylesheet" href="cells.css" />
+  </head>
+  <body>
+    <header>
+      <!-- <div class="selector"> -->
+      <!--   <label for="program_selector">Program:</label> -->
+      <!--   <select name="program" id="program_selector"> -->
+      <!--     <option value="game">Game</option> -->
+      <!--     <option value="visualiser">Visualiser</option> -->
+      <!--     <option value="solver">Solver</option> -->
+      <!--   </select> -->
+      <!-- </div> -->
+      <button id="settings_modal_button" class="modal_button primary">
+        Settings
+      </button>
+      <div id="settings_modal" class="modal hidden">
+        <h5>Settings</h5>
+        <div class="settings">
+          <div class="option">
+            <label for="grid_size">Grid Size:</label>
+            <input
+              type="number"
+              id="grid_size"
+              name="grid_size"
+              value="8"
+              defaultValue="8"
+            />
+          </div>
+          <div class="option">
+            <button id="save_settings">Apply</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <h1 class="title">BlackBox</h1>
 
-  <div class="settings">
-    <div class="create-grid">
-      <label for="size" class="label">Grid size:</label>
-      <input type="number" name="size" id="size">
-      <button class="update">Create new Grid</button>
-      <button class="generate">Generate Paths</button>
+    <div id="program_options" class="options">
+      <button id="start_button" class="start">Start Game</button>
+      <button id="submit_button" class="primary hidden">Submit Guess</button>
     </div>
-  </div>
+    <h4 id="game_message"></h4>
 
-  <div class="grid-wrapper">
-    <div class="grid"></div>
-  </div>
+    <table id="grid" class="grid"></table>
 
-  <script src="game.js"></script>
-</body>
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
